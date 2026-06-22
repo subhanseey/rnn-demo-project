@@ -2,10 +2,10 @@ import os
 import gdown
 import streamlit as st
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.datasets import imdb
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import load_model
+import tf_keras as keras
+from tf_keras.datasets import imdb
+from tf_keras.preprocessing.sequence import pad_sequences
+from tf_keras.models import load_model
 
 # Download model from Google Drive if not present
 MODEL_PATH = 'model.h5'
@@ -55,4 +55,3 @@ if st.button("Classify"):
         sentiment, score = predict_sentiment(user_input)
         st.write("Sentiment:", sentiment)
         st.write("Score:", score)
-        
