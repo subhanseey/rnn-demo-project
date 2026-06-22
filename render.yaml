@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: rnn-demo-project
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py --server.port 10000
+    runtime: python-3.10.13
+    
