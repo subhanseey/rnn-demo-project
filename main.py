@@ -2,15 +2,13 @@ import os
 import gdown
 import streamlit as st
 import numpy as np
-import tf_keras as keras
-from tf_keras.datasets import imdb
-from tf_keras.preprocessing.sequence import pad_sequences
-from tf_keras.models import load_model
+from tensorflow.keras.datasets import imdb
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import load_model
 
 # Download model from Google Drive if not present
 MODEL_PATH = 'model.h5'
-FILE_ID = '14uRJ63AJ4AR4eo2RIPSGU3zYk5VeQlXJ'
-
+FILE_ID = "14uRJ63AJ4AR4eo2RIPSGU3zYk5VeQlXJ"
 if not os.path.exists(MODEL_PATH):
     with st.spinner('Downloading model, please wait...'):
         gdown.download(
